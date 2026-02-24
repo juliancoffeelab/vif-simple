@@ -1,0 +1,26 @@
+(version 0.0.6)
+
+(build
+ (all_platforms
+  ((action
+    (progn
+     (when %{pkg-self:dev} (run dune subst))
+     (run dune build -p %{pkg-self:name} -j %{jobs})
+     (run
+      dune
+      install
+      -p
+      %{pkg-self:name}
+      --create-install-files
+      %{pkg-self:name}))))))
+
+(depends
+ (all_platforms
+  (dune conan)))
+
+(source
+ (fetch
+  (url
+   https://github.com/mirage/conan/releases/download/v0.0.6/conan-0.0.6.tbz)
+  (checksum
+   sha256=b210257b881715ffb9dcbf88678c8559ec2aef26795a5304afd5a8b4bbf11e16)))

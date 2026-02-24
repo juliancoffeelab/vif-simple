@@ -2,12 +2,11 @@
 Hello world webserver in OCaml [vif](https://github.com/robur-coop/vif).
 
 # Disclaimer
-Vif is super extra experimental, and this exact repo depends on some branch that fixes compilations.
-We should probably pin on some commit when this reaches master and all.
+Pins to a specific `vif` git commit, cause `opam` release wasn't ready yet.
 
 # Run
-I ... think, it doesn't even need any `opam` manipulations (although you do need to have it installed).
-Everything is managed with `dune`.
+I ... think, it doesn't even need any `opam` manipulations (although you do
+need to have it installed). Everything is managed with `dune`.
 
 Load and resolve all the dependencies.
 ```bash

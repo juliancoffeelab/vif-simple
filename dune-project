@@ -7,9 +7,9 @@
     (utop :with-test)
     vif
     (ocaml (>= 5.4.0))
-    (fmt (>= 0.9.0))))
+    fmt))
 
 (pin
-  (url "git+https://github.com/robur-coop/vif.git#deps")
+  (url "git+https://github.com/robur-coop/vif.git#225e17")
  (package
    (name vif)))

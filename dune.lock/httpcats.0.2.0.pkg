@@ -1,0 +1,28 @@
+(version 0.2.0)
+
+(build
+ (all_platforms
+  ((action
+    (progn
+     (when %{pkg-self:dev} (run dune subst))
+     (run dune build -p %{pkg-self:name} -j %{jobs}))))))
+
+(depends
+ (all_platforms
+  (ocaml
+   dune
+   miou
+   h2
+   h1
+   ca-certs
+   bstr
+   tls-miou-unix
+   dns-client-miou-unix
+   happy-eyeballs-miou-unix)))
+
+(source
+ (fetch
+  (url
+   https://github.com/robur-coop/httpcats/releases/download/v0.2.0/httpcats-0.2.0.tbz)
+  (checksum
+   sha256=3587d8d1e297025340ab59b934acc2c96fabfc36ff60f07a7d64e7067521e631)))

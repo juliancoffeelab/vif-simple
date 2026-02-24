@@ -1,0 +1,19 @@
+(version 10.2.4)
+
+(build
+ (all_platforms
+  ((action
+    (progn
+     (when %{pkg-self:dev} (run dune subst))
+     (run dune build -p %{pkg-self:name} -j %{jobs}))))))
+
+(depends
+ (all_platforms
+  (dune ocaml dns randomconv domain-name mtime mirage-crypto-rng fmt ipaddr)))
+
+(source
+ (fetch
+  (url
+   https://github.com/mirage/ocaml-dns/releases/download/v10.2.4/dns-10.2.4.tbz)
+  (checksum
+   sha256=d852d15ca2f58db573679bf18688745600b91296e2e54486609869d666f3d12f)))

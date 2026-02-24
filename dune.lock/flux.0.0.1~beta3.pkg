@@ -1,0 +1,15 @@
+(version 0.0.1~beta3)
+
+(build
+ (all_platforms ((action (run dune build -p %{pkg-self:name} -j %{jobs})))))
+
+(depends
+ (all_platforms
+  (ocaml dune miou)))
+
+(source
+ (fetch
+  (url
+   https://github.com/robur-coop/flux/releases/download/v0.0.1_beta3/flux-0.0.1.beta3.tbz)
+  (checksum
+   sha256=96eda206d7eacfb921d5a6bb459254d7f8c507bbc11aa27f1544fb5c73e204c7)))

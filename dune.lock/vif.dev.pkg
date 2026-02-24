@@ -1,0 +1,38 @@
+(version dev)
+
+(build
+ (all_platforms
+  ((action
+    (progn
+     (when %{pkg-self:dev} (run dune subst))
+     (run dune build -p %{pkg-self:name} -j %{jobs}))))))
+
+(depends
+ (all_platforms
+  (ocaml
+   dune
+   uri
+   fmt
+   bos
+   logs
+   fpath
+   bytesrw
+   flux
+   fluxt
+   jsont
+   cmdliner
+   httpcats
+   tyre
+   mirage-crypto-rng-miou-unix
+   decompress
+   conan-unix
+   conan-database
+   multipart_form-miou
+   hmap
+   tyxml)))
+
+(source
+ (fetch
+  (url git+https://github.com/robur-coop/vif.git#225e17)))
+
+(dev)
